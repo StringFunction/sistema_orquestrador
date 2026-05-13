@@ -41,12 +41,12 @@ export default function Home() {
               <input className="input" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Buscar por nome ou ID..." style={{ width: 220 }} />
               <div className="input" style={{ display: "flex", alignItems: "center", gap: 6, padding: "6px 10px" }}>
                 <Filter size={14} color="var(--muted)" />
-                <select value={filter} onChange={(e) => setFilter(e.target.value)} style={{ background: "transparent", border: "none", outline: "none", fontSize: 13 }}>
-                  <option value="all">Todos</option>
-                  <option value="success">Sucesso</option>
-                  <option value="failure">Falha</option>
-                  <option value="running">Em execução</option>
-                  <option value="paused">Pausado</option>
+                <select value={filter} onChange={(e) => setFilter(e.target.value)} style={{ background: "#0a0f1711", border: "none", outline: "none", fontSize: 13 }}>
+                  <option style={{color : "white", background : "#0a0f1711"}} value="all">Todos</option>
+                  <option style={{color : "white", background : "#0a0f17"}} value="success">Sucesso</option>
+                  <option style={{color : "white", background : "#0a0f17"}} value="failure">Falha</option>
+                  <option style={{color : "white", background : "#0a0f17"}} value="running">Em execução</option>
+                  <option style={{color : "white", background : "#0a0f17"}} value="paused">Pausado</option>
                 </select>
               </div>
             </div>

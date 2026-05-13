@@ -1,3 +1,4 @@
+@import "tailwindcss";
 :root {
   --bg: #0d1117;
   --bg-elev: #151b25;
@@ -81,9 +82,9 @@ input, select { font-family: inherit; color: inherit; }
 }
 .search-box input { background: transparent; border: none; outline: none; flex: 1; font-size: 14px; }
 .search-box input::placeholder { color: var(--muted); }
-.icon-btn { padding: 10px; border-radius: 10px; background: var(--card); border: 1px solid var(--border); position: relative; transition: background 0.15s; }
+.icon-btn { padding: 10px; border-radius: 10px; background: var(--card); border: 1px solid var(--border); position: relative; transition: 0.15s; }
 .icon-btn:hover { background: var(--bg-elev); }
-.icon-btn .badge { position: absolute; top: 6px; right: 6px; width: 8px; height: 8px; border-radius: 999px; background: var(--danger); }
+.icon-btn .badge { position: absolute; top: 6px; right: 6px; width: 10px; height: 8px; border-radius: 999px; background: var(--danger); }
 
 /* Page */
 .page { padding: 32px; display: flex; flex-direction: column; gap: 32px; }

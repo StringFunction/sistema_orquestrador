@@ -15,7 +15,7 @@ export default function Sidebar() {
         <div className="sidebar-logo"><Workflow size={20} color="#0d1117" /></div>
         <div>
           <h1>RPA Orchestrator</h1>
-          <p>Enterprise Suite</p>
+          <p>StringFunction</p>
         </div>
       </div>
       
@@ -39,7 +39,7 @@ export default function Sidebar() {
         <div className="user-card">
           <div className="user-avatar">LB</div>
           <div className="user-info">
-            <p>Lucas Barros</p>
+            <p>Calcinha preta</p>
             <span>Administrador</span>
           </div>
           <button className="logout-btn" aria-label="Sair"><LogOut size={16} /></button>
