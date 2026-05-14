@@ -38,7 +38,7 @@ export default function Rpa() {
           <div className="table-wrap">
             <table>
               <thead>
-                <tr><th>ID</th><th>Nome</th><th>Descrição</th><th>Máquina</th><th>Última execução</th><th>Status</th><th className="text-right">Ações</th></tr>
+                <tr><th>ID</th><th>Nome</th><th>Descrição</th><th>Máquina</th><th>Última execução</th><th className="flex justify-center">Ações</th></tr>
               </thead>
               <tbody>
                 {bots.map((b) => (
@@ -48,7 +48,6 @@ export default function Rpa() {
                     <td className="text-muted" style={{ maxWidth: 260, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{b.description}</td>
                     <td className="text-muted">{b.machine}</td>
                     <td className="text-muted">{b.lastRun}</td>
-                    <td><StatusBadge status={b.status} /></td>
                     <td className="text-right">
                       <div className="row-actions">
                         <button onClick={() => setSelected(b)} aria-label="Detalhes"><Eye size={16} /></button>
