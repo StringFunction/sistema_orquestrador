@@ -1,14 +1,43 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { CheckCircle2, XCircle, PauseCircle, Filter } from "lucide-react";
 import PageHeader from "../components/PageHeader.jsx";
 import StatCard from "../components/StatCard.jsx";
 import StatusBadge from "../components/StatusBadge.jsx";
 import { mockBots } from "../lib/mock-data.js";
+import {API_URL} from "../service/api.js"
 
 export default function Home() {
   const [query, setQuery] = useState("");
   const [filter, setFilter] = useState("all");
+  // const [mockBots, setmockbots] = useState([])
+  //SOLICITICAO DE DADOS
+  const buscarAgendamentos = ( async () => {
+    try {
+      const response = await fetch(`${API_URL}`, {
+        method : "GET"
+      })
+      if (response.status == 200) {
+        console.log(response);
+        
+        
+      }
+      
+    } catch (error) {
+      console.log("Erro durante execucao");
+      
+      
+    }
+  })
 
+  useEffect(() => {
+    console.log("Fazendo requisao de agendamentos");
+    
+    buscarAgendamentos()
+
+  }, [])
+
+
+  // contar quantos bots estão em cada estado (failure, success e paused) e memorizar esses resultados para evitar cálculos desnecessários
   const counts = useMemo(() => ({
     failure: mockBots.filter((b) => b.status === "failure").length,
     success: mockBots.filter((b) => b.status === "success").length,
@@ -16,7 +45,7 @@ export default function Home() {
   }), []);
 
   const filtered = mockBots.filter((b) => {
-    const okQ = b.name.toLowerCase().includes(query.toLowerCase()) || b.id.toLowerCase().includes(query.toLowerCase());
+    const okQ = b.name.toLowerCase().includes(query.toLowerCase()) || b.id.toLowerCase().includes(query.toLowerCase()) || b.machine.toLowerCase().includes(query.toLowerCase());
     const okS = filter === "all" || b.status === filter;
     return okQ && okS;
   });
