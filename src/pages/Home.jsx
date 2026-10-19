@@ -54,7 +54,13 @@ export default function Home() {
           <div className="table-wrap">
             <table>
               <thead>
-                <tr><th>ID</th><th>Nome do Bot</th><th>Máquina</th><th>Horário</th><th>Status</th></tr>
+                <tr>
+                  <th>ID</th>
+                  <th>Nome do Bot</th>
+                  <th>Máquina</th>
+                  <th>Horário</th>
+                  <th>Status</th>
+                </tr>
               </thead>
               <tbody>
                 {filtered.map((b) => (
