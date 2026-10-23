@@ -5,7 +5,7 @@ const map = {
   success: { label: "Sucesso", cls: "success" , icon : <Smile />},
   failure: { label: "Falha", cls: "danger", icon : <Frown/> },
   running: { label: "Em execução", cls: "info", icon: <RotateCw /> },
-  paused: { label: "Pausado", cls: "warning", icon: <FaBed className="text-[25px]"/> },
+  Pronto: { label: "Dormindo", cls: "warning", icon: <FaBed className="text-[25px]"/> },
 };
 export default function StatusBadge({ status }) {
   const s = map[status];
